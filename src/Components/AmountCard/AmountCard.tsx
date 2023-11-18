@@ -4,11 +4,7 @@ import GraphCard from "../GraphCard/GraphCard";
 import { updateUserDetails } from "../../Api";
 import { AmountDetailsProps, AmountCardProps } from "../../Utils/interface";
 
-const AmountCard: React.FC<AmountCardProps> = ({
-  data,
-  handleSave,
-  chargeStatus,
-}) => {
+const AmountCard: React.FC<AmountCardProps> = ({ data, chargeStatus }) => {
   const [amountCategory6, setamountCategory6] = useState<number>(
     data?.amount?.category_6
   );
@@ -135,7 +131,7 @@ const AmountCard: React.FC<AmountCardProps> = ({
           />
         )}
         <button
-          onClick={handleSave}
+          type="submit"
           disabled={isSaveDisabled || !chargeStatus}
           className="save__button"
         >

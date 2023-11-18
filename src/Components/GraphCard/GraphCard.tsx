@@ -21,6 +21,7 @@ const GraphCard: React.FC<GraphCardProps> = ({
         backgroundColor: "#F0C3F1",
         borderColor: "rgba(0,0,0,1)",
         borderWidth: 1,
+        barThickness: 40,
         data: [
           amountCategory6 ?? dataValues?.amount?.category_6,
           amountCategory7 ?? dataValues?.amount?.category_7,
@@ -39,8 +40,20 @@ const GraphCard: React.FC<GraphCardProps> = ({
         options={{
           indexAxis: "x",
           scales: {
+            x: {
+              grid: {
+                display: true,
+                color: (context) =>
+                  context?.tick?.value === 0 ? "white" : "rgba(0,0,0,0.1)",
+              },
+            },
             y: {
               beginAtZero: true,
+              grid: {
+                display: true,
+                color: (context) =>
+                  context?.tick?.value === 0 ? "white" : "rgba(0,0,0,0.1)",
+              },
             },
           },
           plugins: {
@@ -51,7 +64,7 @@ const GraphCard: React.FC<GraphCardProps> = ({
           elements: {
             bar: {
               borderWidth: 2,
-              borderRadius: 8,
+              borderRadius: 4,
               borderSkipped: "bottom",
             },
           },

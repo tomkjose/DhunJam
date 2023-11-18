@@ -10,7 +10,6 @@ export interface AmountDetailsProps {
 
 export interface AmountCardProps {
   data: AmountDetails;
-  handleSave: () => any;
   chargeStatus: boolean;
 }
 

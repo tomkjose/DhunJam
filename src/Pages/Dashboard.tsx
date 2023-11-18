@@ -8,7 +8,7 @@ import AmountCard from "../Components/AmountCard/AmountCard";
 function Dashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const [dj, setDj] = useState<any>("");
+  const [userData, setUserData] = useState<any>("");
   const changeChargeStatus = (chargeStatus: boolean | null) => {
     setChargeStatus(!chargeStatus);
   };
@@ -23,8 +23,8 @@ function Dashboard() {
   useEffect(() => {
     const fetchDJDetails = async () => {
       try {
-        const djDetails = await userDetails(user.data.id);
-        setDj(djDetails);
+        const retrievedUser = await userDetails(user.data.id);
+        setUserData(retrievedUser);
         // console.log("djDetails", djDetails);
         if (!user) {
           setChargeStatus(user.charge_customers);
@@ -37,23 +37,16 @@ function Dashboard() {
     fetchDJDetails();
   }, [user]);
 
-  const handleSave = () => {
-    console.log("called");
-  };
   return (
     <div className="dashboard__container">
       <h1>
-        {dj.name}, {dj.location} on Dhun Jam
+        {userData.name}, {userData.location} on Dhun Jam
       </h1>
       <SongRequestCard
         chargeStatus={chargeStatus}
         changeChargeStatus={changeChargeStatus}
       />
-      <AmountCard
-        data={dj}
-        handleSave={handleSave}
-        chargeStatus={chargeStatus}
-      />
+      <AmountCard data={userData} chargeStatus={chargeStatus} />
     </div>
   );
 }
