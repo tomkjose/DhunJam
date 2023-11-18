@@ -1,0 +1,58 @@
+.amount__card {
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.amount__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input__container div {
+  width: 50%;
+}
+
+.input__container span {
+  width: 50%;
+  padding-right: 1rem;
+}
+
+.input__box {
+  width: 100%;
+}
+
+.input__box input {
+  width: 100%;
+  background-color: #030303;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  appearance: none;
+}
+
+#input__text {
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input__box input:focus {
+  outline: none;
+}
+
+.amount__container {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}

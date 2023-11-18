@@ -1,0 +1,31 @@
+.request_card {
+  display: flex;
+  width: 100%;
+}
+
+.request_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.request_container span {
+  width: 50%;
+}
+
+.charge_status {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.charge_status input {
+  margin-left: 1rem;
+}
+
+.charge_status_container {
+  width: 100%;
+  display: flex;
+}
