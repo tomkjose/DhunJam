@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard, Login, Fof } from "../../Pages/Index";
 import "../../Styles/index.css";
 const App: React.FC = () => {

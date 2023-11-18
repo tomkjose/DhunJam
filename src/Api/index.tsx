@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { API_URLS } from "../Utils/constant";
-import { AmountDetailsProps } from "../Utils/interface";
+import { AmountDetailsProps, AmountDetails } from "../Utils/interface";
 
 export const login = async (
   username: string,
@@ -18,17 +18,18 @@ export const login = async (
   }
 };
 
-export const userDetails = async (userId: number): Promise<void> => {
+export const userDetails = async (userId: number): Promise<AmountDetails> => {
+  let data;
   try {
     const response: AxiosResponse = await axios.get(
       `${API_URLS.userData()}${userId}`
     );
-    const data = await response.data.data;
+    data = await response.data.data;
     // console.log("data", data);
-    return data;
   } catch (error) {
     console.log("error", error);
   }
+  return data;
 };
 
 export const updateUserDetails = async (

@@ -7,8 +7,6 @@ const ChargeCard: React.FC<ChargeCardProps> = ({
 }) => {
   const [radioValue, setRadioValue] = useState<boolean | null>(chargeStatus);
 
-  // console.log("radioValue", radioValue);
-  // console.log("chargeStatus", chargeStatus);
   return (
     <div className="request_card">
       <div className="request_container">
