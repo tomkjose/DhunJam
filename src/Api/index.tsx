@@ -37,8 +37,6 @@ export const updateUserDetails = async (
   updatedAmount: AmountDetailsProps
 ): Promise<void> => {
   try {
-    // console.log("updatedAmount", updatedAmount);
-    // console.log("userId", userId);
     const response: AxiosResponse = await axios.put(
       `${API_URLS.userData()}${userId}`,
       updatedAmount

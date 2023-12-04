@@ -4,8 +4,8 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import { useAuth } from "../../Provider/AuthProvider";
 
 const LoginCard: React.FC = () => {
-  const [username, setUsername] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [username, setUsername] = useState<string>("DJ@4");
+  const [password, setPassword] = useState<string>("Dhunjam@2023");
   const { signIn } = useAuth();
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -28,6 +28,7 @@ const LoginCard: React.FC = () => {
             name="username"
             onChange={(e) => setUsername(e.target.value)}
             className="input__feild"
+            defaultValue={username}
             placeholder="Username"
           />
         </div>
@@ -37,6 +38,7 @@ const LoginCard: React.FC = () => {
             name="password"
             onChange={(e) => setPassword(e.target.value)}
             className="input__feild"
+            defaultValue={password}
             placeholder="Password"
           />
           <i
